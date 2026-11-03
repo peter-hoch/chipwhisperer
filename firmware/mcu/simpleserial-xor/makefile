@@ -7,8 +7,9 @@ SRC += simpleserial-xor.c
 # Use simpleserial 2
 SS_VER = SS_VER_2_1
 
-# No crypto required
-CRYPTO_TARGET = NONE
+# Use mbedTLS AES
+CRYPTO_TARGET = MBEDTLS
+CRYPTO_OPTIONS = AES128C
 
 # include other required build files
 include ../simpleserial/Makefile.simpleserial
