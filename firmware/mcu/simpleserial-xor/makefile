@@ -1,19 +1,22 @@
-# what the final build file will be called
+# Final output name
 TARGET = simpleserial-xor
 
-# our C firmware file
+# Application source
 SRC += simpleserial-xor.c
 
-# Use simpleserial 2
+# SimpleSerial 2.1
 SS_VER = SS_VER_2_1
 
-# Use mbedTLS AES
+# Use ChipWhisperer's bundled Mbed TLS implementation
 CRYPTO_TARGET = MBEDTLS
-CRYPTO_OPTIONS = AES128C
+CRYPTO_OPTIONS = AES128
 
-# include other required build files
+# ChipWhisperer firmware root
+FIRMWAREPATH = ../.
+
+# SimpleSerial build support
 include ../simpleserial/Makefile.simpleserial
 
-FIRMWAREPATH = ../.
+# Main ChipWhisperer build system
 include $(FIRMWAREPATH)/Makefile.inc
 
