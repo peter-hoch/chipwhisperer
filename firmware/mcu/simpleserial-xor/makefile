@@ -1,18 +1,16 @@
+
 TARGET = simpleserial-xor
 
 SRC += simpleserial-xor.c
 
 SS_VER = SS_VER_2_1
 
-# ChipWhisperer firmware root
 FIRMWAREPATH = ../.
 
-# Mbed TLS
+# Mbed TLS AES
 CRYPTO_TARGET = MBEDTLS
-CRYPTO_OPTIONS = AES128
+CRYPTO_OPTIONS = AES128C
 
-# SimpleSerial
+include $(FIRMWAREPATH)/crypto/Makefile.crypto
 include $(FIRMWAREPATH)/simpleserial/Makefile.simpleserial
-
-# ChipWhisperer build system
 include $(FIRMWAREPATH)/Makefile.inc
