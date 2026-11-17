@@ -37,3 +37,6 @@
 [submodule "firmware/mcu/external/mbedtls"]
 	path = firmware/mcu/external/mbedtls
 	url = https://github.com/Mbed-TLS/mbedtls.git
+[submodule "chipwhisperer-jupyter"]
+	path = chipwhisperer-jupyter
+	url = git@github.com:peter-hoch/chipwhisperer-jupyter.git
